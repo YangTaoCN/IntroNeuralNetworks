@@ -2,7 +2,7 @@ import get_prices as hist
 import tensorflow as tf
 from preprocessing import DataProcessing
 # import pandas_datareader.data as pdr if using the single test below
-import fix_yahoo_finance as fix
+import yfinance as fix
 fix.pdr_override()
 
 start = "2003-01-01"
@@ -35,4 +35,3 @@ print(model.evaluate(X_test, Y_test))
 # stock = data["Adj Close"]
 # X_predict = np.array(stock).reshape((1, 10)) / 200
 # print(model.predict(X_predict)*200)
-

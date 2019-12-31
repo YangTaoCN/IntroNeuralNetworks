@@ -1,5 +1,5 @@
 import pandas_datareader.data as pdr
-import fix_yahoo_finance as fix
+import yfinance as fix
 import numpy as np
 fix.pdr_override()
 
@@ -21,7 +21,7 @@ def back_test(strategy, seq_len, ticker, start_date, end_date, dim):
     data = pdr.get_data_yahoo(ticker, start_date, end_date)
     stock_data = data["Adj Close"]
     errors = []
-    for i in range((len(stock_data)//10)*10 - seq_len - 1):
+    for i in range((len(stock_data) // 10) * 10 - seq_len - 1):
         x = np.array(stock_data.iloc[i: i + seq_len, 1]).reshape(dim) / 200
         y = np.array(stock_data.iloc[i + seq_len + 1, 1]) / 200
         predict = strategy.predict(x)

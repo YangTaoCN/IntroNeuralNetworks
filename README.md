@@ -68,7 +68,7 @@ pip install -r requirements.txt
 
 Now we come to the most dreaded part of any machine learning project: data acquisiton and data preprocessing. As tedious and hard as it might be, it is vital to have high quality data to feed into your model. As the saying goes "Garbage in. Garbage out." This is most applicable to machine learning models, as your model is only as good as the data it is fed. Processing the data comes in two parts: downloading the data, and forming our datasets for the model. Thanks to Yahoo Finance API, downloading the stock price data is relatively simple (sadly I doubt not for long). 
 
-To download the stock price data, we use `pandas_datareader` which after a while did not work. So we use this [fix](https://github.com/ranaroussi/fix-yahoo-finance) and use `fix_yahoo_finance`. If this fails (maybe in the near future), you can just download the stock data directly from Yahoo for free and save it as `stock_price.csv`.
+To download the stock price data, we use `pandas_datareader` which after a while did not work. So we use this [fix](https://github.com/ranaroussi/fix-yahoo-finance) and use `yfinance`. If this fails (maybe in the near future), you can just download the stock data directly from Yahoo for free and save it as `stock_price.csv`.
 
 ## Preprocessing
 
